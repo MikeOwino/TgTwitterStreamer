@@ -48,6 +48,7 @@ class TgStreamer(AsyncStream):
         tweet = status._json
         if tweet["text"].startswith("RT "):
             return
+        print(tweet)
         user = tweet["user"]
         if not str(user["id"]) in TRACK_IDS:
             return
